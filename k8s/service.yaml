@@ -2,11 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: spring-hello-service
+  annotations:
+    prometheus.io/scrape: 'true'
+    prometheus.io/path: '/actuator/prometheus'
+    prometheus.io/port: '8080'
 spec:
   selector:
-    app: spring-hello  
+    app: spring-hello
   ports:
     - protocol: TCP
-      port: 80 
-      targetPort: 8080  
-  type: LoadBalancer  
+      port: 80
+      targetPort: 8080
+  type: LoadBalancer

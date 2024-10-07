@@ -8,9 +8,11 @@ metadata:
     prometheus.io/port: '8080'
 spec:
   selector:
-    app: spring-hello
+    app: spring-hello  
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 8080
-  type: LoadBalancer
+      port: 80 
+      targetPort: 8080  
+  type: LoadBalancer  
+
+
